@@ -18,5 +18,12 @@
         "titleBar.inactiveBackground": "#1c915d99",
         "titleBar.inactiveForeground": "#e7e7e799"
     },
-    "peacock.color": "#1c915d"
+    "peacock.color": "#1c915d",
+    "cSpell.words": [
+        "eventtime",
+        "gcode",
+        "Klippers",
+        "microsteps",
+        "sdcard"
+    ]
 }

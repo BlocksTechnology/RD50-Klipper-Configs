@@ -2,6 +2,9 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"path": "../klipper"
 		}
 	],
 	"settings": {
@@ -27,7 +30,44 @@
 		"peacock.color": "#1c915d",
 		"cSpell.enabled": true,
 		"cSpell.enableFiletypes": [
-			"shellscript"
+			"!vue",
+			"jinja",
+			"klipper-cfg",
+			"klipper-config",
+			"klipper-gcode",
+			"klipper-script",
+			"markdown",
+			"shellscript",
+			"systemd-unit-file"
+		],
+		"prettier.documentSelectors": [
+			"*.cfg"
+		], 
+		"[klipper-cfg]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+		"[klipper-script]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		}, 
+		"[klipper-config]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+		"cSpell.words": [
+			"configfile",
+			"eventtime",
+			"microsteps",
+			"toolheads"
+		],
+		"intellicodeApiExamples.loggingLevel": "ALL",
+		"autoDocstring.startOnNewLine": true,
+		"editor.defaultFormatter": "charliermarsh.ruff",
+		"python.analysis.supportDocstringTemplate": true
+	},
+	"extensions": {
+		"recommendations": [
+			"aeresov.klipper-config",
+			"dannymcgee.klipper",
+			"visualstudioexptteam.vscodeintellicode"
 		]
 	}
 }
