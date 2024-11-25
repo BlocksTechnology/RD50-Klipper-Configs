@@ -141,12 +141,9 @@ class UnloadFilament:
                 self.gcode.run_script_from_command("M83\nM400")
                 self.gcode.run_script_from_command("G92 E0.0\nM400")
 
-                # self.toolhead.commanded_pos[3] = 0.0
-                    
-                # prev_pos = self.toolhead.get_position()
-                # self.toolhead.set_position((prev_pos[0], prev_pos[1], prev_pos[2], 0.0),homing_axes=(0, 1, 2) )
-                self.gcode.run_script_from_command("T0 PARK")
                 self.heat_and_wait(0, wait=False)
+                
+                self.gcode.run_script_from_command("T0 PARK\nM400")
                 self.unload_started = False
                 self.printer.send_event("unload_filament:end")
                 self.toolhead.wait_moves()
@@ -335,9 +332,9 @@ class UnloadFilament:
         if self.toolhead is None:
             return
         try:
-            self.save_state
+            self.save_state()
             
-            if gcmd.get("TOOLHEAD") == "Load_T0": 
+            if gcmd.get("TOOLHEAD") == "Unload_T0": 
                 self.gcode.run_script_from_command("T0 UNLOAD")
             else: 
                 self.gcode.run_script_from_command("T1 UNLOAD")

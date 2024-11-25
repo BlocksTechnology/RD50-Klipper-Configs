@@ -238,9 +238,9 @@ class LoadFilament:
         self.gcode.respond_info("Restored positions.")
         self.restore_state()
 
+        self.heat_and_wait(0, wait=False)
         # resume_completion = self.reactor.register_callback(self.conditional_resume)
         # resume_completion.wait()
-        self.heat_and_wait(0, wait=False)
         self.gcode.run_script_from_command("T0 PARK\nM400")
 
     def move_extruder_mm(self, distance=10.0, speed=30.0, wait=True):
